@@ -22,7 +22,7 @@
         </style>
     </head>
     <body class="antialiased">
-      <section id="welcome">
+      <section id="app-layout">
         @include('includes.side-menu')
         @yield('content')
       </section>
