@@ -1,5 +1,6 @@
 .welcome-jumbo{
-    max-width: calc(100vw - 350px);
+    transform: translate3d(300px, 0, 0);
+    max-width: calc(100vw - 300px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,6 +11,7 @@
     background: radial-gradient(ellipse at center, #ed4852 0%,#9c1b24 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     overflow: hidden;
     padding: 100px;
+    height: 100%;
     .status{
     display: inline-block;
     padding: 10px 15px;
