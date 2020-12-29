@@ -1,0 +1,71 @@
+#waitlist-page {
+    padding: 100px;
+
+    h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        color: #000;
+        margin-bottom: 2.5rem;
+    }
+
+    p {
+        font-size: .9rem;
+        line-height: 1.5;
+        margin-bottom: 2rem;
+        font-weight: 500;
+    }
+
+    form {
+
+        .form-group {
+
+            label {
+                font-weight: 700 !important;
+                margin-bottom: 10px !important;
+                color: #000 !important;
+            }
+
+            .form-control {
+                padding: 10px !important;
+                border: 2px solid #9c1b24 !important;
+                font-size: 1.3rem !important;
+                box-sizing: border-box !important;
+                height: auto;
+            }
+        }
+
+        button {
+            background: #9c1b24 !important;
+            border: none !important;
+            padding: 20px 40px !important;
+        }
+    }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 0px) and (max-width: 767px) {
+    #waitlist-page {
+        padding: 20px;
+
+        h1 {
+            font-size: rem;
+        }
+    }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991px) {
+    #waitlist-page {
+        padding: 20px;
+    }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+
+}
