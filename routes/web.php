@@ -6,6 +6,7 @@ use App\Http\Controllers\StaticPagesController;
 use App\Http\Controllers\admin\AdminController;
 use App\Http\Controllers\admin\FoodItemsController;
 use App\Http\Controllers\admin\CustomersController;
+use App\Http\Controllers\admin\UsersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,6 +44,11 @@ Route::get('/admin/food-items/{id}/edit', [FoodItemsController::class, 'edit']);
 // Admin Customers
 Route::get('/admin/offers-members', [CustomersController::class, 'allOffersMembers']);
 Route::get('/admin/reservations', [CustomersController::class, 'allReservations']);
+
+// Admin Users
+Route::get('/admin/users', [UsersController::class, 'index']);
+Route::get('/admin/users/create', [UsersController::class, 'create']);
+Route::get('/admin/users/{id}/edit', [UsersController::class, 'edit']);
 
 // Admin Authentication
 Route::get('/admin/register', function () {
