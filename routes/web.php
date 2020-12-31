@@ -5,6 +5,7 @@ use App\Http\Controllers\admin\FoodCategoriesController;
 use App\Http\Controllers\StaticPagesController;
 use App\Http\Controllers\admin\AdminController;
 use App\Http\Controllers\admin\FoodItemsController;
+use App\Http\Controllers\admin\CustomersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +23,7 @@ Route::get('/', [StaticPagesController::class, 'home']);
 Route::get('/menu', [StaticPagesController::class, 'menu']);
 Route::get('/menu/id', [StaticPagesController::class, 'singleMenu']);
 Route::get('/about', [StaticPagesController::class, 'about']);
-Route::get('/waitlist', [StaticPagesController::class, 'waitlist']);
+Route::get('/reservations', [StaticPagesController::class, 'reservations']);
 Route::get('/contact', [StaticPagesController::class, 'contact']);
 Route::get('/offers', [StaticPagesController::class, 'offers']);
 
@@ -38,6 +39,10 @@ Route::get('/admin/food-categories/{id}/edit', [FoodCategoriesController::class,
 Route::get('/admin/food-items', [FoodItemsController::class, 'index']);
 Route::get('/admin/food-items/create', [FoodItemsController::class, 'create']);
 Route::get('/admin/food-items/{id}/edit', [FoodItemsController::class, 'edit']);
+
+// Admin Customers
+Route::get('/admin/offers-members', [CustomersController::class, 'allOffersMembers']);
+Route::get('/admin/reservations', [CustomersController::class, 'allReservations']);
 
 // Admin Authentication
 Route::get('/admin/register', function () {

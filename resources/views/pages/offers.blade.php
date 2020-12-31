@@ -35,7 +35,7 @@
                         <div class='row'>
                             <div class='col-md-6'>
                                 <div class="form-group">
-                                    <label for="emailinput">Email address</label>
+                                    <label for="emailinput">Email Address</label>
                                     <input
                                         type="email"
                                         class="form-control"
@@ -47,7 +47,7 @@
                             </div>
                             <div class='col-md-6'>
                                 <div class="form-group">
-                                    <label for="phoneinput">Phone number</label>
+                                    <label for="phoneinput">Phone Number</label>
                                     <input
                                         type="text"
                                         class="form-control"
