@@ -38,17 +38,26 @@
     <!-- signup form  -->
     <!-- ============================================================== -->
     <form method="POST" action="{{ route('register') }}" class="splash-container">
+        @csrf
         <div class="card">
             <div class="card-header">
                 <h3 class="mb-1">Registrations Form</h3>
                 <p>Please enter your user information.</p>
             </div>
             <div class="card-body">
-                @csrf
                 <div class="form-group">
-                    <input placeholder="Name" id="name" type="text" class="form-control form-control-lg @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                    <input placeholder="First Name" id="fname" type="text" class="form-control form-control-lg @error('fname') is-invalid @enderror" name="fname" value="{{ old('fname') }}" required autocomplete="fname" autofocus>
 
-                    @error('name')
+                    @error('fname')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+                <div class="form-group">
+                    <input placeholder="Last Name" id="lname" type="text" class="form-control form-control-lg @error('lname') is-invalid @enderror" name="lname" value="{{ old('lname') }}" required autocomplete="lname" autofocus>
+
+                    @error('lname')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>

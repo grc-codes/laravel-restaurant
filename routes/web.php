@@ -48,6 +48,7 @@ Route::get('/admin/reservations', [CustomersController::class, 'allReservations'
 // Admin Users
 Route::get('/admin/users', [UsersController::class, 'index']);
 Route::get('/admin/users/create', [UsersController::class, 'create']);
+Route::post('/admin/users', [UsersController::class, 'store']);
 Route::get('/admin/users/{id}/edit', [UsersController::class, 'edit']);
 
 // Admin Authentication
