@@ -56,11 +56,16 @@
                                         </td>
                                         <td>
                                             <a
-                                                href='/admin/users/{{ $user->id }}/delete'
-                                                onclick="if(! confirm('Are you sure you want to delete this category?')) { return false; }"  
+                                                href="/admin/users/{{ $user->id }}/delete"
+                                                onclick="event.preventDefault(); document.getElementById('delete-user-{{ $user->id }}').submit();"
                                             >
-                                                <i class='far fa-edit'></i>
+                                                <i class='far fa-trash-alt'></i>
                                             </a>
+
+                                            <form id="delete-user-{{ $user->id }}" action="/admin/users/{{ $user->id }}/delete" method="POST" class="d-none">
+                                                @csrf
+                                                @method('DELETE')
+                                            </form>
                                         </td>
                                     </tr>
                                 @endforeach
