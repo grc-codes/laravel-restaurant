@@ -88,7 +88,7 @@
                     <div class="background"></div>
                     <div class="content">
                       <div class="food-title">
-                        Deserts
+                        Desserts
                       </div>
                       <p class="food-description">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi omnis iste ab deleniti cupiditate
