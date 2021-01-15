@@ -34,7 +34,10 @@ Route::get('/admin', [AdminController::class, 'dashboard']);
 // Admin Food Categories
 Route::get('/admin/food-categories', [FoodCategoriesController::class, 'index']);
 Route::get('/admin/food-categories/create', [FoodCategoriesController::class, 'create']);
+Route::post('/admin/food-categories', [FoodCategoriesController::class, 'store']);
 Route::get('/admin/food-categories/{id}/edit', [FoodCategoriesController::class, 'edit']);
+Route::put('/admin/food-categories/{id}', [FoodCategoriesController::class, 'update']);
+Route::delete('/admin/food-categories/{id}/delete', [FoodCategoriesController::class, 'delete']);
 
 // Admin Food Items
 Route::get('/admin/food-items', [FoodItemsController::class, 'index']);

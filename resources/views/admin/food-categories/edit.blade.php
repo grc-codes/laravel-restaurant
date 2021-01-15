@@ -33,14 +33,35 @@
                 <div class="card">
                     <h5 class="card-header">Edit category</h5>
                     <div class="card-body">
-                        <form action="#" id="basicform" data-parsley-validate="">
+                        <form method="POST" action="/admin/food-categories/{{ $category->id }}">
+                            @csrf
+                            @method('PUT')
                             <div class="form-group">
-                                <label for="inputCategory">Category Name</label>
-                                <input id="inputCategory" type="text" name="category" data-parsley-trigger="change" required="" placeholder="Enter category name" autocomplete="off" class="form-control">
+                                <label for="inputtitle">Title</label>
+                                <input placeholder="Category Title" id="inputtitle" type="text" class="form-control form-control-lg @error('title') is-invalid @enderror" name="title" value="{{ old('title', $category->title) }}" required autocomplete="title" autofocus>
+                                @error('title')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                             <div class="form-group">
-                                <label for="inputCategoryImageUrl">Category Image Url</label>
-                                <input id="inputCategoryImageUrl" type="text" name="image_url" data-parsley-trigger="change" required="" placeholder="http://www.billys.com/img/burgers.jpg" autocomplete="off" class="form-control">
+                                <label for="inputimageurl">Image Url</label>
+                                <input placeholder="Add Image Url" id="inputimageurl" type="text" class="form-control form-control-lg @error('image_url') is-invalid @enderror" name="image_url" value="{{ old('image_url', $category->image_url) }}" required autocomplete="imageurl" autofocus>
+                                @error('image_url')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="inputdescription">Description</label>
+                                <textarea placeholder="Write a Description" id="inputdescription" type="text" class="form-control form-control-lg @error('description') is-invalid @enderror" name="description" required autofocus>{{ old('description', $category->description) }}</textarea>
+                                @error('description')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                             <div class="row">
                                 <div class="col-sm-6 pb-2 pb-sm-4 pb-lg-0 pr-0">
