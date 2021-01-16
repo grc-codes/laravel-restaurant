@@ -42,7 +42,10 @@ Route::delete('/admin/food-categories/{id}/delete', [FoodCategoriesController::c
 // Admin Food Items
 Route::get('/admin/food-items', [FoodItemsController::class, 'index']);
 Route::get('/admin/food-items/create', [FoodItemsController::class, 'create']);
+Route::post('/admin/food-items', [FoodItemsController::class, 'store']);
 Route::get('/admin/food-items/{id}/edit', [FoodItemsController::class, 'edit']);
+Route::put('/admin/food-items/{id}', [FoodtemsController::class, 'update']);
+Route::delete('/admin/food-items/{id}/delete', [FoodtemsController::class, 'delete']);
 
 // Admin Customers
 Route::get('/admin/offers-members', [CustomersController::class, 'allOffersMembers']);
