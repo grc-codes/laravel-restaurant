@@ -41,16 +41,38 @@
                                     <th scope="col">Email Address</th>
                                     <th scope="col">Phone Number</th>
                                     <th scope="col">Date Created</th>
+                                    <th scope="col">Edit</th>
+                                    <th scope="col">Delete</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Joe Budden</td>
-                                    <td>jbp@gmail.com</td>
-                                    <td>917-555-5555</td>
-                                    <td>2/2/2020</td>
-                                </tr>
+                                @foreach ($members as $member)
+                                    <tr>
+                                        <th scope="row">{{ $member->id }}</th>
+                                        <td>{{ $member->fname }} {{ $member->lname }}</td>
+                                        <td>{{ $member->email }}</td>
+                                        <td>{{ $member->phone_number }}</td>
+                                        <td>{{ date('m/d/Y', strtotime($member->updated_at)) }}</td>
+                                        <td>
+                                            <a href='/admin/members/{{ $member->id }}/edit'>
+                                                <i class='far fa-edit'></i>
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a
+                                                href="/admin/members/{{ $member->id }}/delete"
+                                                onclick="event.preventDefault(); document.getElementById('delete-member-{{ $member->id }}').submit();"
+                                            >
+                                                <i class='far fa-trash-alt'></i>
+                                            </a>
+
+                                            <form id="delete-member-{{ $member->id }}" action="/admin/members/{{ $member->id }}/delete" method="POST" class="d-none">
+                                                @csrf
+                                                @method('DELETE')
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

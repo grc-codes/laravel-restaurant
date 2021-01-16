@@ -82,7 +82,7 @@
                                 <label for="inputrole">Role</label>
                                 <select name="role_id" class="form-control" id="inputrole">
                                     @foreach ($roles as $role)
-                                        <option value='{{ $role->id }}' @if($role->title === 'Employee')selected @endif>{{ $role->title }}</option>
+                                        <option value='{{ $role->id }}' @if($role->id == $user->role_id)selected @endif>{{ $role->title }}</option>
                                     @endforeach
                                 </select>
                             </div>
