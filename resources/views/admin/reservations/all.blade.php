@@ -43,20 +43,43 @@
                                     <th scope="col">Guests #</th>
                                     <th scope="col">Time</th>
                                     <th scope="col">Date Created</th>
+                                    <th scope="col">Edit</th>
+                                    <th scope="col">Delete</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Joe Budden</td>
-                                    <td>jbp@gmail.com</td>
-                                    <td>917-555-5555</td>
-                                    <td>4</td>
-                                    <td>7:00 PM</td>
-                                    <td>2/2/2020</td>
-                                </tr>
+                                @foreach ($reservations as $reservation)
+                                    <tr>
+                                        <th scope="row">{{ $reservation->id }}</th>
+                                        <td>{{ $reservation->fname }} {{ $reservation->lname }}</td>
+                                        <td>{{ $reservation->email }}</td>
+                                        <td>{{ $reservation->phone_number }}</td>
+                                        <td>{{ $reservation->guests_total }}</td>
+                                        <td>{{ $reservation->time }}</td>
+                                        <td>{{ date('m/d/Y', strtotime($reservation->updated_at)) }}</td>
+                                        <td>
+                                            <a href='/admin/reservations/{{ $reservation->id }}/edit'>
+                                                <i class='far fa-edit'></i>
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a
+                                                href="/admin/reservations/{{ $reservation->id }}/delete"
+                                                onclick="event.preventDefault(); document.getElementById('delete-reservation-{{ $reservation->id }}').submit();"
+                                            >
+                                                <i class='far fa-trash-alt'></i>
+                                            </a>
+
+                                            <form id="delete-reservation-{{ $reservation->id }}" action="/admin/reservations/{{ $reservation->id }}/delete" method="POST" class="d-none">
+                                                @csrf
+                                                @method('DELETE')
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
+                        {{ $reservations->links('pagination::bootstrap-4') }}
                     </div>
                 </div>
             </div>
