@@ -63,9 +63,6 @@
                                         <li class="nav-item">
                                             <a class="nav-link" href="/admin/members">All Members <span class="badge badge-secondary">New</span></a>
                                         </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="/admin/members/create">New Member <span class="badge badge-secondary">New</span></a>
-                                        </li>
                                     </ul>
                                 </div>
                             </li>
@@ -75,9 +72,6 @@
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
                                             <a class="nav-link" href="/admin/reservations">All Reservations <span class="badge badge-secondary">New</span></a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="/admin/reservations/create">New Reservation <span class="badge badge-secondary">New</span></a>
                                         </li>
                                     </ul>
                                 </div>

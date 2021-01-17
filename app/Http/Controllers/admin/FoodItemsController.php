@@ -17,7 +17,7 @@ class FoodItemsController extends Controller
     }
 
     public function index() {
-        $items = FoodItem::paginate(10);
+        $items = FoodItem::paginate(1);
         return view('admin/food-items/all', [
             'items' => $items
         ]);

@@ -31,6 +31,7 @@ Route::get('/offers', [StaticPagesController::class, 'offers']);
 Route::post('/offers', [StaticPagesController::class, 'registerMember']);
 Route::get('/offers/thank-you', [StaticPagesController::class, 'offersThankYou']);
 
+
 // Admin Dashboard
 Route::get('/admin', [AdminController::class, 'dashboard']);
 
@@ -53,6 +54,7 @@ Route::delete('/admin/food-items/{id}/delete', [FoodItemsController::class, 'del
 // Admin Customers
 // Admin Members
 Route::get('/admin/members', [MemberController::class, 'index']);
+Route::delete('/admin/members/{id}/delete', [MemberController::class, 'delete']);
 
 // Admin Reservations
 Route::get('/admin/reservations', [CustomersController::class, 'allReservations']);

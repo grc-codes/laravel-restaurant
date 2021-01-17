@@ -41,7 +41,6 @@
                                     <th scope="col">Email Address</th>
                                     <th scope="col">Phone Number</th>
                                     <th scope="col">Date Created</th>
-                                    <th scope="col">Edit</th>
                                     <th scope="col">Delete</th>
                                 </tr>
                             </thead>
@@ -53,11 +52,6 @@
                                         <td>{{ $member->email }}</td>
                                         <td>{{ $member->phone_number }}</td>
                                         <td>{{ date('m/d/Y', strtotime($member->updated_at)) }}</td>
-                                        <td>
-                                            <a href='/admin/members/{{ $member->id }}/edit'>
-                                                <i class='far fa-edit'></i>
-                                            </a>
-                                        </td>
                                         <td>
                                             <a
                                                 href="/admin/members/{{ $member->id }}/delete"
@@ -75,6 +69,7 @@
                                 @endforeach
                             </tbody>
                         </table>
+                        {{ $members->links('pagination::bootstrap-4') }}
                     </div>
                 </div>
             </div>
