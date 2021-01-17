@@ -28,6 +28,8 @@ Route::get('/about', [StaticPagesController::class, 'about']);
 Route::get('/reservations', [StaticPagesController::class, 'reservations']);
 Route::get('/contact', [StaticPagesController::class, 'contact']);
 Route::get('/offers', [StaticPagesController::class, 'offers']);
+Route::post('/offers', [StaticPagesController::class, 'registerMember']);
+Route::get('/offers/thank-you', [StaticPagesController::class, 'offersThankYou']);
 
 // Admin Dashboard
 Route::get('/admin', [AdminController::class, 'dashboard']);

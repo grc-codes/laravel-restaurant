@@ -1,11 +1,19 @@
 #offers-page {
     padding: 100px;
 
+    .tybg {
+        background: none;
+    }
+
     h1 {
         font-size: 3rem;
         font-weight: 700;
         color: #000;
         margin-bottom: 2.5rem;
+    }
+
+    .thank-you {
+        text-align: center;
     }
 
     p {

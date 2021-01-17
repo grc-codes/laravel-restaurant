@@ -46,6 +46,8 @@ class MemberController extends Controller
         $member->description = request('description');
         $member->image_url = request('image_url');
         $member->save();
+
+        return 'Thank You';
         return redirect('/admin/members');
     }
 

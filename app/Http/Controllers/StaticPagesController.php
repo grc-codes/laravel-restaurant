@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Member;
 
 class StaticPagesController extends Controller
 {
@@ -25,6 +26,27 @@ class StaticPagesController extends Controller
 
     public function offers() {
         return view('pages/offers');
+    }
+
+    public function registerMember() {
+        request()->validate([
+            'fname' => ['required', 'string'],
+            'lname' => ['required', 'string'],
+            'email' => ['required', 'string'],
+            'phone_number' => ['required', 'string']
+        ]);
+
+        $member = new Member();
+        $member->fname = request('fname');
+        $member->lname = request('lname');
+        $member->email = request('email');
+        $member->phone_number = request('phone_number');
+        $member->save();
+        return redirect('/offers/thank-you');
+    }
+
+    public function offersThankYou() {
+        return view('pages/thank-you');
     }
 
     public function menu() {
