@@ -63,6 +63,15 @@ Route::delete('/admin/members/{id}/delete', [MemberController::class, 'delete'])
 Route::get('/admin/reservations', [ReservationController::class, 'index']);
 Route::delete('/admin/reservations/{id}/delete', [ReservationController::class, 'delete']);
 
+// Admin Settings
+Route::get('/admin/settings/general', [SettingsController::class, 'general']);
+Route::post('/admin/settings/general', [SettingsController::class, 'saveGeneral']);
+Route::get('/admin/settings/seo', [SettingsController::class, 'seo']);
+Route::post('/admin/settings/seo', [SettingsController::class, 'saveSeo']);
+Route::get('/admin/settings/social', [SettingsController::class, 'social']);
+Route::post('/admin/settings/social', [SettingsController::class, 'saveSocial']);
+
+
 // Admin Users
 Route::get('/admin/users', [UsersController::class, 'index']);
 Route::get('/admin/users/create', [UsersController::class, 'create']);
