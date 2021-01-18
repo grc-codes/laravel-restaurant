@@ -10,10 +10,10 @@ use Illuminate\Support\Facades\Validator;
 
 class FoodCategoriesController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
 
     public function index() {
         $categories = FoodCategory::paginate(1);

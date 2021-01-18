@@ -1,5 +1,10 @@
 @extends('layouts.app')
 
+@section('title')
+{{ $settings['general']->site_title }} | {{ $foodItem }}
+@endsection
+
+
 @section('content')
     <div id='single-menu-page'>
         <div class='row'>

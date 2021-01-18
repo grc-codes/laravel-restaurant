@@ -1,5 +1,10 @@
 @extends('layouts.app')
 
+@section('title')
+{{ $settings['general']->site_title }} | Thank You
+@endsection
+
+
 @section('content')
     <div id='offers-page'>
         <div class='content-box tybg'>

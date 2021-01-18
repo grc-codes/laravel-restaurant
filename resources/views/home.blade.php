@@ -1,11 +1,7 @@
 @extends('layouts.landing')
 
-@section('title', 'Page Title')
-
-@section('sidebar')
-    @parent
-
-    <p>This is appended to the master sidebar.</p>
+@section('title')
+{{ $settings['general']->site_title }} | America's #1 Burgers
 @endsection
 
 @section('content')

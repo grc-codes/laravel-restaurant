@@ -20,12 +20,12 @@ class GeneralSettingSeeder extends Seeder
         DB::table('general_settings')->insert([
             'site_title' => 'Billy Burgers',
             'logo_image_url' => '/img/clipart-restaurant-restaurant-logo-5.png',
-            'address_1' => '245 Main Street',
-            'address_2' => '',
-            'city' => 'New York',
-            'state' => 'NY',
-            'zipcode' => '10040',
-            'phone_number' => '973-816-4815',
+            'address_1' => '1565 N Raleigh St',
+            'address_2' => '#100',
+            'city' => 'Denver',
+            'state' => 'CO',
+            'zipcode' => '80204',
+            'phone_number' => '720-456-6779',
             'updated_at' => Carbon::now(),
             'created_at' => Carbon::now()
         ]);
