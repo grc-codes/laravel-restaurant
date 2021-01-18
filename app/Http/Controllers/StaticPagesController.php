@@ -6,11 +6,22 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Member;
 use App\Models\Reservation;
+use App\Models\GeneralSetting;
+use App\Models\SeoSetting;
+use App\Models\SocialSetting;
 
 class StaticPagesController extends Controller
 {
     public function home() {
-        return view('home');
+        $general_settings = GeneralSetting::find(1);
+        $seo_settings = SeoSetting::find(1);
+        $social_settings = SocialSetting::find(1);
+
+        return view('home', [
+            'general_settings' => $general_settings,
+            'seo_settings' => $seo_settings,
+            'social_settings' => $social_settings
+        ]);
     }
 
     public function about() {
