@@ -9,6 +9,7 @@ use App\Http\Controllers\admin\CustomersController;
 use App\Http\Controllers\admin\UsersController;
 use App\Http\Controllers\admin\MemberController;
 use App\Http\Controllers\admin\ReservationController;
+use App\Http\Controllers\admin\SettingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -64,12 +65,12 @@ Route::get('/admin/reservations', [ReservationController::class, 'index']);
 Route::delete('/admin/reservations/{id}/delete', [ReservationController::class, 'delete']);
 
 // Admin Settings
-Route::get('/admin/settings/general', [SettingsController::class, 'general']);
-Route::post('/admin/settings/general', [SettingsController::class, 'saveGeneral']);
-Route::get('/admin/settings/seo', [SettingsController::class, 'seo']);
-Route::post('/admin/settings/seo', [SettingsController::class, 'saveSeo']);
-Route::get('/admin/settings/social', [SettingsController::class, 'social']);
-Route::post('/admin/settings/social', [SettingsController::class, 'saveSocial']);
+Route::get('/admin/settings/general', [SettingController::class, 'general']);
+Route::put('/admin/settings/general', [SettingController::class, 'saveGeneral']);
+Route::get('/admin/settings/seo', [SettingController::class, 'seo']);
+Route::put('/admin/settings/seo', [SettingController::class, 'saveSeo']);
+Route::get('/admin/settings/social', [SettingController::class, 'social']);
+Route::put('/admin/settings/social', [SettingController::class, 'saveSocial']);
 
 
 // Admin Users
