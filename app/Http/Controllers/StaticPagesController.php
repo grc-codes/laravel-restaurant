@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Member;
 use App\Models\Reservation;
+use App\Models\FoodCategory;
+use App\Models\FoodItem;
+
 class StaticPagesController extends Controller
 {
     public function home() {
@@ -71,12 +74,18 @@ class StaticPagesController extends Controller
     }
 
     public function menu() {
-        return view('menu/index');
+        $categories = FoodCategory::all();
+        return view('menu/all-categories', [
+            'categories' => $categories
+        ]);
     }
 
     public function singleMenu($slug) {
+        $foodCategory = FoodCategory::where('title', '=', $slug)->first();
+        $foodItems = FoodItem::where('category_id', '=', $foodCategory->id)->get();
         return view('menu/single-menu', [
-            'foodItem' => ucfirst($slug)
+            'foodItem' => ucfirst($slug),
+            'foodItems' => $foodItems
         ]);
     }
 }

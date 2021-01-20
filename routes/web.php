@@ -96,7 +96,7 @@ Route::get('/admin/login', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-View::composer(['home', 'pages.about', 'pages.contact', 'pages.offers', 'pages.reservations', 'pages.thank-you', 'menu.index', 'menu.single-menu'], function($view) {
+View::composer(['home', 'pages.about', 'pages.contact', 'pages.offers', 'pages.reservations', 'pages.thank-you', 'menu.all-categories', 'menu.single-menu'], function($view) {
     $general_settings = GeneralSetting::find(1);
     $seo_settings = SeoSetting::find(1);
     $social_settings = SocialSetting::find(1);

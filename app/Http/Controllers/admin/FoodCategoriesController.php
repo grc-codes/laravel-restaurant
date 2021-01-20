@@ -16,7 +16,7 @@ class FoodCategoriesController extends Controller
     // }
 
     public function index() {
-        $categories = FoodCategory::paginate(1);
+        $categories = FoodCategory::paginate(10);
         return view('admin/food-categories/all', [
             'categories' => $categories
         ]);
