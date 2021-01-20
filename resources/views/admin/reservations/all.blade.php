@@ -43,7 +43,6 @@
                                     <th scope="col">Guests #</th>
                                     <th scope="col">Time</th>
                                     <th scope="col">Date Created</th>
-                                    <th scope="col">Edit</th>
                                     <th scope="col">Delete</th>
                                 </tr>
                             </thead>
@@ -57,11 +56,6 @@
                                         <td>{{ $reservation->guests_total }}</td>
                                         <td>{{ $reservation->time }}</td>
                                         <td>{{ date('m/d/Y', strtotime($reservation->updated_at)) }}</td>
-                                        <td>
-                                            <a href='/admin/reservations/{{ $reservation->id }}/edit'>
-                                                <i class='far fa-edit'></i>
-                                            </a>
-                                        </td>
                                         <td>
                                             <a
                                                 href="/admin/reservations/{{ $reservation->id }}/delete"

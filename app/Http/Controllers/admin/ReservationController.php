@@ -16,7 +16,7 @@ class ReservationController extends Controller
     }
 
     public function index() {
-        $reservations = Reservation::paginate(1);
+        $reservations = Reservation::paginate(10);
         return view('admin/reservations/all', [
             'reservations' => $reservations
         ]);
