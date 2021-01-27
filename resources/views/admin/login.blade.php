@@ -36,7 +36,8 @@
         <div class="card ">
             <div class="card-header text-center"><a href="/index.html"><img class="logo-img" src="/assets/images/logo.png" alt="logo"></a><span class="splash-description">Please enter your user information.</span></div>
             <div class="card-body">
-                <form>
+                <form method='POST' action="{{ route('login') }}">
+                    @csrf
                     <div class="form-group">
                         <input class="form-control form-control-lg" id="username" type="text" placeholder="Username" autocomplete="off">
                     </div>

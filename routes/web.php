@@ -9,6 +9,7 @@ use App\Http\Controllers\admin\CustomersController;
 use App\Http\Controllers\admin\UsersController;
 use App\Http\Controllers\admin\MemberController;
 use App\Http\Controllers\admin\ReservationController;
+use App\Http\Controllers\admin\HomeController;
 use App\Http\Controllers\admin\SettingController;
 use App\Models\GeneralSetting;
 use App\Models\SeoSetting;
@@ -95,7 +96,7 @@ Route::get('/admin/login', function () {
 });
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 View::composer(['home', 'pages.about', 'pages.contact', 'pages.offers', 'pages.reservations', 'pages.thank-you', 'menu.all-categories', 'menu.single-menu'], function($view) {
     $general_settings = GeneralSetting::find(1);
     $seo_settings = SeoSetting::find(1);
